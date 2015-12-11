@@ -4,19 +4,12 @@
    Author's custom styles
    ========================================================================== */
 
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: "Open Sans";
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.privacy-meter-label {
+	text-align: center;
+}
