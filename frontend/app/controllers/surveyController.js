@@ -19,6 +19,12 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
   });
 
   $scope.submit = function () {
+    // Send HTTP POST request containing $scope.responses to 'api/submitsurvey'
+    var request = $http({
+        method: "post",
+        url: "api/submitsurvey",
+        data: $scope.responses
+    });
     console.log($scope.responses);
   };
 
