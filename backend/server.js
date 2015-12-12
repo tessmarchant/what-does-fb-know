@@ -39,9 +39,92 @@ var surveySchema = mongoose.Schema({
 
 var Survey = mongoose.model('Survey', surveySchema);
 
-/*var statsSchema = mongoose.Schema({
-	allStats =
-});*/
+var statSchema = mongoose.Schema({
+	allStats: {
+		age: [Number],
+		sex: [Number],
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	maleStats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	femaleStats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	age1319Stats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	age2029Stats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	age3039Stats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	age4049Stats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	},
+	age50Stats: {
+		empinfo: [Number],
+		finbeh: [Number],
+    	chardon: [Number],
+    	expinfo: [Number],
+    	resprof: [Number],
+    	travbeh: [Number],
+    	purchbeh: [Number],
+    	medcon: [Number]
+	}
+});
+
+var Stat = mongoose.model('Stat', statSchema);
 
 app.post('/submitsurvey', function (req, res) {
 	console.log('POST request to /submitsurvey');
@@ -64,6 +147,106 @@ app.post('/submitsurvey', function (req, res) {
 	object.save(function (err) {
 		if (err) return console.error(err);
 	});
+
+	Stat.findOne({}, function(err, stats) {
+		if (err) {
+	      console.log('Database error.');
+	      res.status(500).send({msg: 'Database error.'});
+	    }
+		if (stats == null) {
+			var newStats = {
+				allStats: {
+					age: [0,0,0,0,0],
+					sex: [0,0],
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+			    },
+				maleStats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				},
+				femaleStats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				},
+				age1319Stats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				},
+				age2029Stats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				},
+				age3039Stats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				},
+				age4049Stats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				},
+				age50Stats: {
+					empinfo: [0,0,0,0,0,0,0,0],
+					finbeh: [0,0,0,0,0,0,0,0],
+			    	chardon: [0,0,0,0,0,0,0,0],
+			    	expinfo: [0,0,0,0,0,0,0,0],
+			    	resprof: [0,0,0,0,0,0,0,0],
+			    	travbeh: [0,0,0,0,0,0,0,0],
+			    	purchbeh: [0,0,0,0,0,0,0,0],
+			    	medcon: [0,0,0,0,0,0,0,0]
+				}
+			};
+
+			var object = new Stat(newStats);
+			object.save(function (err) {
+				if (err) return console.error(err);
+			});
+		}
+
+	});	
+
 
 	res.end();
 });
