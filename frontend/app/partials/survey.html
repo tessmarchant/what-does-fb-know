@@ -18,11 +18,11 @@
         Please select your gender.
     </h2>
     <form>
-      <input type="radio" name="sex" value="male" ng-model="responses.sex"> Male
+      <input type="radio" name="sex" ng-change="selectGender()" value="male" ng-model="responses.sex"> Male
       <br>
-      <input type="radio" name="sex" value="female" ng-model="responses.sex"> Female
+      <input type="radio" name="sex" ng-change="selectGender()" value="female" ng-model="responses.sex"> Female
       <br>
-      <input type="radio" name="sex" value="other" ng-model="responses.sex"> Other
+      <input type="radio" name="sex" ng-change="selectGender()" value="other" ng-model="responses.sex"> Other
     </form> 
 </div>
 
@@ -94,5 +94,5 @@
     <input id="medcon" type="range" min="1" max="7" ng-model="responses.medcon"/>
 </div>
 
-<button class="btn btn-lg btn-success" ng-click="submit()">Submit</button>
+<button class="btn btn-lg btn-success" ng-click="submit()" ng-disabled="!enableSubmit()">Submit</button>
 

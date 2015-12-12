@@ -29,7 +29,8 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
   };
 
   $scope.privacyMeterLabel = function (privacyLevel) {
-    console.log(privacyLevel);
+    //console.log(privacyLevel);
+    //console.log($scope.enableSubmit);
     var text = '';
     if (privacyLevel == 1) {
       text = 'Very Private';
@@ -57,6 +58,17 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
     }
     return text;
   };
+
+  $scope.selectGender = function () {
+    $scope.selectedGender = true;
+  };
+
+  $scope.enableSubmit = function () {
+    return $scope.responses.age != '' && $scope.selectedGender;
+  };
+
+  $scope.selectedGender = false;
+
 });
 
 })();
