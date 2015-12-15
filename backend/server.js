@@ -124,7 +124,7 @@ var statSchema = mongoose.Schema({
 	}
 });
 
-var Stat = mongoose.model('Stat', statSchema);
+var Stat = mongoose.model('Statistic', statSchema);
 
 app.post('/submitsurvey', function (req, res) {
 	console.log('POST request to /submitsurvey');
