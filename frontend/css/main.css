@@ -9,6 +9,9 @@ body {
     padding-bottom: 20px;
     font-family: "Open Sans";
     background: #f9f9f9;
+    /*margin: auto;
+    position: relative;
+    width: 960px;*/
 }
 
 .privacy-meter-label {
@@ -29,4 +32,41 @@ body {
 
 #survey-page {
 	visibility: hidden;
+}
+
+.bargraph {
+  width: 0%;
+  position: relative;
+  visibility: hidden;
+  margin-bottom: 4em;
+  padding-bottom: 5em;
+}
+
+.bargraph-layer {
+  color: rgba(0,0,0,0);
+  float: left;
+  width: 0%;
+  height: 5em;
+}
+
+.layer-1 {
+  background-color:  red
+}
+.layer-2 {
+  background-color:  orange
+}
+.layer-3 {
+  background-color:  yellow
+}
+.layer-4 {
+  background-color:  green
+}
+.layer-5 {
+  background-color:  blue
+}
+.layer-6 {
+  background-color:  purple
+}
+.layer-7 {
+  background-color:  gray
 }
