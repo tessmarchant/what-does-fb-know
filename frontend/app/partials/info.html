@@ -2,40 +2,56 @@
 
 <h3>Employment Information</h3>
 <div class="bargraph allstats" id="allstats-empinfo">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-empinfo-{{$index}}" ng-repeat="level in stats.allStats.empinfo track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-empinfo-{{$index}}" ng-repeat="level in stats.allStats.empinfo track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Financial Behaviors</h3>
 <div class="bargraph allstats" id="allstats-finbeh">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-finbeh-{{$index}}" ng-repeat="level in stats.allStats.finbeh track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-finbeh-{{$index}}" ng-repeat="level in stats.allStats.finbeh track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Charitable Donations</h3>
 <div class="bargraph allstats" id="allstats-chardon">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-chardon-{{$index}}" ng-repeat="level in stats.allStats.chardon track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-chardon-{{$index}}" ng-repeat="level in stats.allStats.chardon track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Expat Information</h3>
 <div class="bargraph allstats" id="allstats-expinfo">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-expinfo-{{$index}}" ng-repeat="level in stats.allStats.expinfo track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-expinfo-{{$index}}" ng-repeat="level in stats.allStats.expinfo track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Residential Profile</h3>
 <div class="bargraph allstats" id="allstats-resprof">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-resprof-{{$index}}" ng-repeat="level in stats.allStats.resprof track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-resprof-{{$index}}" ng-repeat="level in stats.allStats.resprof track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Travel Behaviors</h3>
 <div class="bargraph allstats" id="allstats-travbeh">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-travbeh-{{$index}}" ng-repeat="level in stats.allStats.travbeh track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-travbeh-{{$index}}" ng-repeat="level in stats.allStats.travbeh track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Purchase Behaviors</h3>
 <div class="bargraph allstats" id="allstats-purchbeh">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-purchbeh-{{$index}}" ng-repeat="level in stats.allStats.purchbeh track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-purchbeh-{{$index}}" ng-repeat="level in stats.allStats.purchbeh track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>
 
 <h3>Media Consumption</h3>
 <div class="bargraph allstats" id="allstats-medcon">
-	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-medcon-{{$index}}" ng-repeat="level in stats.allStats.medcon track by $index" ng-hide="$index == 0"></div>
+	<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-medcon-{{$index}}" ng-repeat="level in stats.allStats.medcon track by $index" ng-hide="$index == 0">
+		<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
+	</div>
 </div>

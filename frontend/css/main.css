@@ -47,26 +47,43 @@ body {
   float: left;
   width: 0%;
   height: 5em;
+  overflow: visible;
 }
 
 .layer-1 {
-  background-color:  red
+  background-color:  #b80028;
 }
 .layer-2 {
-  background-color:  orange
+  background-color:  #ff5b00;
 }
 .layer-3 {
-  background-color:  yellow
+  background-color:  #ffc200;
 }
 .layer-4 {
-  background-color:  green
+  background-color:  #f2ec8c;
 }
 .layer-5 {
-  background-color:  blue
+  background-color:  #c7eb6e;
 }
 .layer-6 {
-  background-color:  purple
+  background-color:  #68BA54;
 }
 .layer-7 {
-  background-color:  gray
+  background-color:  #0E8C1F;
+}
+
+.bargraph-label {
+  position: absolute;
+  top: 6em;
+  left: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: #222;
+  visibility: hidden;
+  font-weight: bold;
+}
+
+.bargraph-layer:hover p {
+  visibility: visible;
 }

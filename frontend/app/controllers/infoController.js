@@ -91,6 +91,37 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
     window.location = $scope.rootUrl;
   };
 
+  $scope.privacyMeterLabel = function (privacyLevel) {
+    //console.log(privacyLevel);
+    //console.log($scope.enableSubmit);
+    var text = '';
+    if (privacyLevel == 1) {
+      text = 'Very Private';
+    }
+    else if (privacyLevel == 2) {
+      text = 'Fairly Private';
+    }
+    else if (privacyLevel == 3) {
+      text = 'Somewhat Private';
+    }
+    else if (privacyLevel == 4) {
+      text = 'Neither Private nor Public';
+    }
+    else if (privacyLevel == 5) {
+      text = 'Somewhat Public';
+    }
+    else if (privacyLevel == 6) {
+      text = 'Fairly Public';
+    }
+    else if (privacyLevel == 7) {
+      text = 'Very Public';
+    }
+    else {
+      text = 'error';
+    }
+    return text;
+  };
+
   function sum(array) {
     var sum = 0;
     for (var i = 1; i < array.length; i++) {
