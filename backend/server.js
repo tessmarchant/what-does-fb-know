@@ -242,6 +242,131 @@ app.post('/submitsurvey', function (req, res) {
 			var object = new Stat(newStats);
 			object.save(function (err) {
 				if (err) return console.error(err);
+				updateStats(newSurvey);
+			});
+		}
+		// after stats object is created
+		else {
+			updateStats(newSurvey);
+		}
+
+		function updateStats(newSurvey) {
+			var update = {$inc: {}};
+			switch(newSurvey.age) {
+				case '1319':
+					update.$inc['allStats.age.0'] = 1;
+					break;
+				case '2029':
+					update.$inc['allStats.age.1'] = 1;
+					break;
+				case '3039':
+					update.$inc['allStats.age.2'] = 1;
+					break;
+				case '4049':
+					update.$inc['allStats.age.3'] = 1;
+					break;
+				case '5059':
+					update.$inc['allStats.age.4'] = 1;
+					break;
+			}
+			switch(newSurvey.sex) {
+				case 'male':
+					update.$inc['allStats.sex.0'] = 1;
+					break;
+				case 'female':
+					update.$inc['allStats.sex.1'] = 1;
+					break;
+			}
+			update.$inc['allStats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+			update.$inc['allStats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+			update.$inc['allStats.chardon.' + newSurvey.rankings.chardon] = 1;
+			update.$inc['allStats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+			update.$inc['allStats.resprof.' + newSurvey.rankings.resprof] = 1;
+			update.$inc['allStats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+			update.$inc['allStats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+			update.$inc['allStats.medcon.' + newSurvey.rankings.medcon] = 1;
+
+			if (newSurvey.sex === 'male') {
+				update.$inc['maleStats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['maleStats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['maleStats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['maleStats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['maleStats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['maleStats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['maleStats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['maleStats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			if (newSurvey.sex === 'female') {
+				update.$inc['femaleStats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['femaleStats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['femaleStats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['femaleStats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['femaleStats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['femaleStats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['femaleStats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['femaleStats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			if (newSurvey.age === '1319') {
+				update.$inc['age1319Stats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['age1319Stats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['age1319Stats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['age1319Stats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['age1319Stats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['age1319Stats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['age1319Stats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['age1319Stats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			if (newSurvey.age === '2029') {
+				update.$inc['age2029Stats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['age2029Stats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['age2029Stats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['age2029Stats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['age2029Stats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['age2029Stats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['age2029Stats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['age2029Stats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			if (newSurvey.age === '3039') {
+				update.$inc['age3039Stats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['age3039Stats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['age3039Stats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['age3039Stats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['age3039Stats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['age3039Stats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['age3039Stats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['age3039Stats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			if (newSurvey.age === '4049') {
+				update.$inc['age4049Stats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['age4049Stats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['age4049Stats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['age4049Stats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['age4049Stats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['age4049Stats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['age4049Stats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['age4049Stats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			if (newSurvey.age === '5059') {
+				update.$inc['age50Stats.empinfo.' + newSurvey.rankings.empinfo] = 1;
+				update.$inc['age50Stats.finbeh.' + newSurvey.rankings.finbeh] = 1;
+				update.$inc['age50Stats.chardon.' + newSurvey.rankings.chardon] = 1;
+				update.$inc['age50Stats.expinfo.' + newSurvey.rankings.expinfo] = 1;
+				update.$inc['age50Stats.resprof.' + newSurvey.rankings.resprof] = 1;
+				update.$inc['age50Stats.travbeh.' + newSurvey.rankings.travbeh] = 1;
+				update.$inc['age50Stats.purchbeh.' + newSurvey.rankings.purchbeh] = 1;
+				update.$inc['age50Stats.medcon.' + newSurvey.rankings.medcon] = 1;
+			}
+
+			Stat.findOneAndUpdate({}, update, function (err, statistic) {
+				if (err) {
+					console.error(err);
+				}
 			});
 		}
 
@@ -252,10 +377,21 @@ app.post('/submitsurvey', function (req, res) {
 });
 
 
-app.get('/', function (req, res) {
-	console.log('GET request to /');
-	res.send('Hello world!');
+app.get('/statistics', function (req, res) {
+	console.log('GET request to /statistics');
+	Stat.findOne({}, function(err, stats) {
+		if (err) {
+	      console.log('Database error.');
+	      res.status(500).send({msg: 'Database error.'});
+	    }
+	    else {
+	    	stats["_id"] = "";
+	    	stats["__v"] = "";
+	    	res.send(stats);
+	    }
+	});
 });
+
 
 app.listen(3000);
 console.log('Server running at http://127.0.0.1:3000/');
