@@ -385,9 +385,12 @@ app.get('/statistics', function (req, res) {
 	      res.status(500).send({msg: 'Database error.'});
 	    }
 	    else {
-	    	stats["_id"] = "";
-	    	stats["__v"] = "";
-	    	res.send(stats);
+	    	if (stats != null) {
+	    		res.send(stats);
+	    	}
+	    	else {
+	    		res.status(500).send({msg: 'No statistics found.'});
+	    	}
 	    }
 	});
 });
