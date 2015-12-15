@@ -1,1 +1,7 @@
 <button class="btn btn-lg" ng-click="clearHistory()">Take the survey again, rockstar!</button>
+
+
+<p>Chardon</p>
+<ol>
+    <li ng-repeat="tally in stats.allStats.chardon track by $index" ng-hide="$index == 0">{{tally}}</li>
+</ol>

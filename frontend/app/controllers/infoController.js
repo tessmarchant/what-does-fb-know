@@ -14,6 +14,17 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
     $scope.rootUrl = 'http://' + window.location.hostname + window.location.pathname;
   }
 
+  $(document).ready(function (){
+    var request = $http({
+        method: "get",
+        url: "api/statistics"
+    }).then(function successCallback(response) {
+        $scope.stats = response.data;
+    }, function errorCallback(response) {
+        alert('Server not available');
+    });
+  });
+
   $scope.clearHistory = function() {
     localStorage.removeItem('done');
     window.location = $scope.rootUrl;
