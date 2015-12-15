@@ -4,6 +4,16 @@ var cont = angular.module('what-does-fb-know.controllers');
 
 cont.controller('surveyController', function ($scope, $filter, $http, $location) {
 
+  /* Handle older browsers without good window.location support */
+  if (window.location.hostname == null) {
+    $scope.hostname = 'whatdoesfbknow.com';
+    $scope.rootUrl = 'http://whatdoesfbknow.com/'
+  }
+  else {
+    $scope.hostname = window.location.hostname;
+    $scope.rootUrl = 'http://' + window.location.hostname + window.location.pathname;
+  }
+
   $(document).ready(function (){
     $scope.responses = {};
     $scope.responses.age = "";
@@ -16,6 +26,13 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
     $scope.responses.travbeh = "4";
     $scope.responses.purchbeh = "4";
     $scope.responses.medcon = "4";
+
+    if (localStorage.getItem('done') != null) {
+      window.location = $scope.rootUrl + '#/info';
+    }
+    else {
+      $('#survey-page').css("visibility", "visible");
+    }
   });
 
   $scope.submit = function () {
@@ -24,6 +41,11 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
         method: "post",
         url: "api/submitsurvey",
         data: $scope.responses
+    }).then(function successCallback(response) {
+      localStorage.setItem('done','true');
+      window.location = $scope.rootUrl + '#/info';
+    }, function errorCallback(response) {
+      alert('Server not available');
     });
     console.log($scope.responses);
   };

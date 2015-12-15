@@ -1,104 +1,106 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>How does Facebook track <em>you</em>?</h1>
-    <h2>And how do you feel about that?</h2>
-    <p>In the survey below, you will indicate how private or public you consider different types of information to be. After completing the survey, you will first learn how your opinions compare to those of the general public, then about current tracking practices, and finally, how to change your tracking preferences to reflect your personal values.</p>
-  </div>
-</div>
+<div id="survey-page">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>How does Facebook track <em>you</em>?</h1>
+        <h2>And how do you feel about that?</h2>
+        <p>In the survey below, you will indicate how private or public you consider different types of information to be. After completing the survey, you will first learn how your opinions compare to those of the general public, then about current tracking practices, and finally, how to change your tracking preferences to reflect your personal values.</p>
+      </div>
+    </div>
 
-<div class="question">
+    <div class="question">
+        <h2>
+            Please select your age.
+        </h2>
+        <select ng-model="responses.age">
+            <option value="">Select Age...</option>
+            <option value="1319">13-19</option>
+            <option value="2029">20-29</option>
+            <option value="3039">30-39</option>
+            <option value="4049">40-49</option>
+            <option value="5059">50+</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <h2>
+            Please select your gender.
+        </h2>
+        <form>
+          <input type="radio" name="sex" ng-change="selectGender()" value="male" ng-model="responses.sex"> Male
+          <br>
+          <input type="radio" name="sex" ng-change="selectGender()" value="female" ng-model="responses.sex"> Female
+        </form> 
+    </div>
+
     <h2>
-        Please select your age.
+        For the following information types, indicate how private or public you consider the information to be:
     </h2>
-    <select ng-model="responses.age">
-        <option value="">Select Age...</option>
-        <option value="1319">13-19</option>
-        <option value="2029">20-29</option>
-        <option value="3039">30-39</option>
-        <option value="4049">40-49</option>
-        <option value="5059">50+</option>
-    </select>
+
+    <div class="question">
+        <h3>
+            Employment Information (your organization's size/industry, your seniority)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.empinfo)}}</p>
+        <input id="empinfo" type="range" min="1" max="7" ng-model="responses.empinfo"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            Financial Behaviors (types of investments, spending methods)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.finbeh)}}</p>
+        <input id="finbeh" type="range" min="1" max="7" ng-model="responses.finbeh"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            Charitable Donations (by cause)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.chardon)}}</p>
+        <input id="chardon" type="range" min="1" max="7" ng-model="responses.chardon"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            Expat Information (country of origin)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.expinfo)}}</p>
+        <input id="expinfo" type="range" min="1" max="7" ng-model="responses.expinfo"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            Residential Profile (length of residence, likelihood of moving)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.resprof)}}</p>
+        <input id="resprof" type="range" min="1" max="7" ng-model="responses.resprof"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            Travel Behaviors (purposes/types)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.travbeh)}}</p>
+        <input id="travbeh" type="range" min="1" max="7" ng-model="responses.travbeh"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            General Purchase Behaviors (purchase types/habits/profiles)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.purchbeh)}}</p>
+        <input id="purchbeh" type="range" min="1" max="7" ng-model="responses.purchbeh"/>
+    </div>
+
+    <div class="question">
+        <h3>
+            Media Consumption (types of television/radio shows you consume)
+        </h3>
+        <p class="privacy-meter-label">{{privacyMeterLabel(responses.medcon)}}</p>
+        <input id="medcon" type="range" min="1" max="7" ng-model="responses.medcon"/>
+    </div>
+
+    <button class="btn btn-lg btn-success" ng-click="submit()" ng-disabled="!enableSubmit()">Submit</button>
+
 </div>
-
-<div class="question">
-    <h2>
-        Please select your gender.
-    </h2>
-    <form>
-      <input type="radio" name="sex" ng-change="selectGender()" value="male" ng-model="responses.sex"> Male
-      <br>
-      <input type="radio" name="sex" ng-change="selectGender()" value="female" ng-model="responses.sex"> Female
-    </form> 
-</div>
-
-<h2>
-    For the following information types, indicate how private or public you consider the information to be:
-</h2>
-
-<div class="question">
-    <h3>
-        Employment Information (your organization's size/industry, your seniority)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.empinfo)}}</p>
-    <input id="empinfo" type="range" min="1" max="7" ng-model="responses.empinfo"/>
-</div>
-
-<div class="question">
-    <h3>
-        Financial Behaviors (types of investments, spending methods)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.finbeh)}}</p>
-    <input id="finbeh" type="range" min="1" max="7" ng-model="responses.finbeh"/>
-</div>
-
-<div class="question">
-    <h3>
-        Charitable Donations (by cause)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.chardon)}}</p>
-    <input id="chardon" type="range" min="1" max="7" ng-model="responses.chardon"/>
-</div>
-
-<div class="question">
-    <h3>
-        Expat Information (country of origin)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.expinfo)}}</p>
-    <input id="expinfo" type="range" min="1" max="7" ng-model="responses.expinfo"/>
-</div>
-
-<div class="question">
-    <h3>
-        Residential Profile (length of residence, likelihood of moving)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.resprof)}}</p>
-    <input id="resprof" type="range" min="1" max="7" ng-model="responses.resprof"/>
-</div>
-
-<div class="question">
-    <h3>
-        Travel Behaviors (purposes/types)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.travbeh)}}</p>
-    <input id="travbeh" type="range" min="1" max="7" ng-model="responses.travbeh"/>
-</div>
-
-<div class="question">
-    <h3>
-        General Purchase Behaviors (purchase types/habits/profiles)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.purchbeh)}}</p>
-    <input id="purchbeh" type="range" min="1" max="7" ng-model="responses.purchbeh"/>
-</div>
-
-<div class="question">
-    <h3>
-        Media Consumption (types of television/radio shows you consume)
-    </h3>
-    <p class="privacy-meter-label">{{privacyMeterLabel(responses.medcon)}}</p>
-    <input id="medcon" type="range" min="1" max="7" ng-model="responses.medcon"/>
-</div>
-
-<button class="btn btn-lg btn-success" ng-click="submit()" ng-disabled="!enableSubmit()">Submit</button>
-

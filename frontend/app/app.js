@@ -15,6 +15,10 @@ app.config(function ($routeProvider) {
       controller: 'surveyController',
       templateUrl: 'app/partials/survey.html'
     })
+    .when('/info', {
+      controller: 'infoController',
+      templateUrl: 'app/partials/info.html'
+    })
     .otherwise({
       redirectTo: '/'
     });
