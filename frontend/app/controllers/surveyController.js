@@ -31,8 +31,12 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
       window.location = $scope.rootUrl + '#/info';
     }
     else {
+      $('.navbar-nav').hide();
       $('#survey-page').css("visibility", "visible");
+
     }
+
+
   });
 
   $scope.submit = function () {

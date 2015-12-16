@@ -19,6 +19,10 @@ app.config(function ($routeProvider) {
       controller: 'infoController',
       templateUrl: 'app/partials/info.html'
     })
+    .when('/tools', {
+      controller: 'toolsController',
+      templateUrl: 'app/partials/tools.html'
+    })
     .otherwise({
       redirectTo: '/'
     });

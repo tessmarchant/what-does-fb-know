@@ -15,6 +15,9 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
   }
 
   $(document).ready(function (){
+    $('.navbar-nav').show();
+    $('#page-link-info').addClass('page-selected active');
+    $('#page-link-tools').removeClass('page-selected active');
     window.scrollTo(0,0);
     var request = $http({
         method: "get",

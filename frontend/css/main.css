@@ -57,7 +57,7 @@ body {
   background-color:  #ff5b00;
 }
 .layer-3 {
-  background-color:  #ffc200;
+  background-color:  #FFD13D;
 }
 .layer-4 {
   background-color:  #f2ec8c;
@@ -86,4 +86,31 @@ body {
 
 .bargraph-layer:hover p {
   visibility: visible;
+}
+
+.navbar-nav {
+  display: none;
+}
+
+.navbar-inverse .navbar-nav>li.page-selected {
+
+  color: white;
+}
+
+.navbar>.container .navbar-brand:hover {
+  color: #9d9d9d;
+}
+
+.navbar>.container .navbar-brand {
+  cursor: default;
+}
+
+#submit-button {
+  width: 10em;
+  font-size: 1.5em;
+}
+
+#retake-button {
+  width: 10em;
+  font-size: 1.5em;
 }
