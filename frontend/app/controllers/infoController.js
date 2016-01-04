@@ -70,8 +70,6 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
             $('#layer-allstats-medcon-' + i).width(allStatsPc_medcon[i-1] + '%');
           }
 
-
-
           $('.bargraph').css('visibility', 'visible');
           $('.bargraph').css('padding-bottom', '0');
           $('.bargraph').animate({
@@ -80,9 +78,6 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
             $('.bargraph').css('padding-bottom', '5em');
           });
         }, 100);
-        
-
-
 
     }, function errorCallback(response) {
         alert('Server not available');
@@ -90,13 +85,18 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
   });
 
   $scope.clearHistory = function() {
-    localStorage.removeItem('done');
+    localStorage.removeItem('empinfo');
+    localStorage.removeItem('finbeh');
+    localStorage.removeItem('chardon');
+    localStorage.removeItem('expinfo');
+    localStorage.removeItem('resprof');
+    localStorage.removeItem('travbeh');
+    localStorage.removeItem('purchbeh');
+    localStorage.removeItem('medcon');
     window.location = $scope.rootUrl;
   };
 
   $scope.privacyMeterLabel = function (privacyLevel) {
-    //console.log(privacyLevel);
-    //console.log($scope.enableSubmit);
     var text = '';
     if (privacyLevel == 1) {
       text = 'Very Private';
@@ -124,6 +124,238 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
     }
     return text;
   };
+
+  $scope.empInfoLabel = function () {
+    var text = 'Employment Information: ';
+    if (localStorage.getItem('empinfo') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('empinfo') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('empinfo') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('empinfo') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('empinfo') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('empinfo') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('empinfo') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.finBehLabel = function () {
+    var text = 'Financial Behaviors: ';
+    if (localStorage.getItem('finbeh') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('finbeh') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('finbeh') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('finbeh') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('finbeh') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('finbeh') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('finbeh') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.charDonLabel = function () {
+    var text = 'Charitable Donations: ';
+    if (localStorage.getItem('chardon') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('chardon') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('chardon') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('chardon') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('chardon') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('chardon') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('chardon') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.expInfoLabel = function () {
+    var text = 'Expat Information: ';
+    if (localStorage.getItem('expinfo') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('expinfo') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('expinfo') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('expinfo') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('expinfo') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('expinfo') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('expinfo') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.resProfLabel = function () {
+    var text = 'Residential Profile: ';
+    if (localStorage.getItem('resprof') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('resprof') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('resprof') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('resprof') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('resprof') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('resprof') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('resprof') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.travBehLabel = function () {
+    var text = 'Travel Behaviors: ';
+    if (localStorage.getItem('travbeh') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('travbeh') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('travbeh') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('travbeh') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('travbeh') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('travbeh') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('travbeh') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.purchBehLabel = function () {
+    var text = 'Purchase Behaviors: ';
+    if (localStorage.getItem('purchbeh') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('purchbeh') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('purchbeh') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('purchbeh') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('purchbeh') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('purchbeh') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('purchbeh') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
+
+  $scope.medConLabel = function () {
+    var text = 'Media Consumption: ';
+    if (localStorage.getItem('medcon') == '1') {
+      text = text + 'Very Private';
+    }
+    else if (localStorage.getItem('medcon') == '2') {
+      text = text + 'Fairly Private';
+    }
+    else if (localStorage.getItem('medcon') == '3') {
+      text = text + 'Somewhat Private';
+    }
+    else if (localStorage.getItem('medcon') == '4') {
+      text = text + 'Neither Private nor Public';
+    }
+    else if (localStorage.getItem('medcon') == '5') {
+      text = text + 'Somewhat Public';
+    }
+    else if (localStorage.getItem('medcon') == '6') {
+      text = text + 'Fairly Public';
+    }
+    else if (localStorage.getItem('medcon') == '7') {
+      text = text + 'Very Public';
+    }
+    else {
+      text = text + 'error';
+    }
+    return text;
+  }
 
   function sum(array) {
     var sum = 0;

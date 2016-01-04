@@ -27,13 +27,13 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
     $scope.responses.purchbeh = "4";
     $scope.responses.medcon = "4";
 
-    if (localStorage.getItem('done') != null) {
-      window.location = $scope.rootUrl + '#/info';
-    }
-    else {
-      $('.navbar-nav').hide();
-      $('#survey-page').css("visibility", "visible");
-
+    if (localStorage.getItem('empinfo') != null) {
+      if (confirm("The survey has already been filled out on this browser. If you have not filled it out yet, click OK and go ahead! If you have already filled out the survey, please click Cancel.") == true) {
+        $('.navbar-nav').hide();
+        $('#survey-page').css("visibility", "visible");
+      } else {
+        window.location = $scope.rootUrl + '#/info';
+      }
     }
 
 
@@ -46,7 +46,14 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
         url: "api/submitsurvey",
         data: $scope.responses
     }).then(function successCallback(response) {
-      localStorage.setItem('done','true');
+      localStorage.setItem('empinfo',$scope.responses.empinfo);
+      localStorage.setItem('finbeh',$scope.responses.finbeh);
+      localStorage.setItem('chardon',$scope.responses.chardon);
+      localStorage.setItem('expinfo',$scope.responses.expinfo);
+      localStorage.setItem('resprof',$scope.responses.resprof);
+      localStorage.setItem('travbeh',$scope.responses.travbeh);
+      localStorage.setItem('purchbeh',$scope.responses.purchbeh);
+      localStorage.setItem('medcon',$scope.responses.medcon);
       window.location = $scope.rootUrl + '#/info';
     }, function errorCallback(response) {
       alert('Server not available');
