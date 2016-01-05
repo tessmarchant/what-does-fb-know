@@ -30,6 +30,7 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
     if (localStorage.getItem('empinfo') != null) {
       if (confirm("The survey has already been filled out on this browser. If you have not filled it out yet, click OK and go ahead! If you have already filled out the survey, please click Cancel.") == true) {
         $('.navbar-nav').hide();
+        $('button.navbar-toggle').hide();
         $('#survey-page').css("visibility", "visible");
       } else {
         window.location = $scope.rootUrl + '#/info';
