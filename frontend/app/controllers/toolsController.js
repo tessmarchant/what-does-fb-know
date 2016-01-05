@@ -20,11 +20,40 @@ cont.controller('toolsController', function ($scope, $filter, $http, $location) 
     $('#page-link-info').removeClass('page-selected active');
     window.scrollTo(0,0);
 
-    
-
+    $('.accordion').accordion({
+      heightStyle: 'content'
+    });
+    $('.accordion').css({
+      visibility: 'visible'
+    });
 
   });
 
+  $scope.submit2 = function () {
+    // Send HTTP POST request containing $scope.responses2 to 'api/submitsurvey2'
+    var request = $http({
+        method: "post",
+        url: "api/submitsurvey2",
+        data: $scope.responses2
+    }).then(function successCallback(response) {
+      $scope.alreadySubmitted = true;
+      alert('Thank you!');
+    }, function errorCallback(response) {
+      alert('Server not available');
+    });
+    console.log($scope.responses2);
+  };
+
+  $scope.selectAnswer = function () {
+    $scope.selectedAnswer = true;
+  };
+
+  $scope.enableSubmit2 = function () {
+    return $scope.selectedAnswer && !$scope.alreadySubmitted;
+  };
+
+  $scope.selectedAnswer = false;
+  $scope.alreadySubmitted = false;
 });
 
 })();

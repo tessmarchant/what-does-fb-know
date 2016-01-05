@@ -6,11 +6,40 @@
         
     </div>
 </div>
-<div class="container container-fluid">
-    <div class="row">
+<div class="container container-fluid" id="tools">
+
+    <div class="accordion">
+      <h1>Privacy Tools</h1>
+      <div>
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Tracker Blockers</h4>
+            <p><strong><a href="https://www.ghostery.com/">Ghostery</a></strong>, uBlock Origin (for <strong><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">Chrome</a></strong> and <strong><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">Firefox</a></strong>), <strong><a href="https://www.mozilla.org/en-US/lightbeam/">Lightbeam</a></strong> for Firefox, and <strong><a href="https://www.eff.org/privacybadger">Privacy Badger</a></strong> are very useful tools that prevent unwanted tracking from advertising companies and keep your online activity safe. I recommend Privacy Badger along with uBlock Origin for a first time user, as uBlock Origin is very lightweight and Privacy Badger has a very intuitive user experience that teaches you about trackers as you use it.
+          </div>
+          <div class="col-md-4">
+            <h4>Secure Communications</h4>
+            <p>The Electronic Frontier Foundation, a non-profit organization that defends web privacy, along with The Tor Project, has built <strong><a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a></strong>, a tool that rewrites requests sent from your browser to use HTTPS always, rather than HTTP.</p>
+          </div>
+          <div class="col-md-4">
+            <h4>Do Not Track</h4>
+            <p>Although there is not a universal solution to web privacy yet, many companies will respect a "Do Not Track" browser header. Learn how to set it up <strong><a href="https://www.eff.org/deeplinks/2012/06/how-turn-do-not-track-your-browser">here!</a></strong></p>
+          </div>
+        </div>
+      </div>
+      <h1>Advertiser Opt-Outs</h1>
+      <div>
+        <p>Visit the Digital Advertising Alliance's <strong><a href="http://www.aboutads.info/choices/">Consumer Choice Page</a></strong> and <strong><a href="http://info.evidon.com/more_info">Ghostery Enterprise</a></strong> and follow the instructions to opt-out of tracking for interest-based ads by all companies participating in each page. Note that these opt-outs will only work if you have not already disabled third-party cookies.</p>
+      </div>
+      <h1>Social Network Preferences</h1>
+      <div>
+        <p><strong><a href="https://www.facebook.com/settings?tab=ads">Facebook</a></strong> and <strong><a href="https://twitter.com/settings/security">Twitter</a></strong> have internal opt-outs that keep those networks from tracking your data as well. Follow the links for whichever network(s) you are a part of!</p>
+      </div>
+    </div>
+
+    <!--<div class="row">
         <div class="col-md-4">
           <h2>Privacy Tools</h2>
-          <p><a href="https://www.ghostery.com/">Ghostery</a>, <a href="https://www.ublock.org/">uBlock</a>, <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a>, and <a href="https://www.mozilla.org/en-US/lightbeam/">Lightbeam</a> are very useful tools that prevent unwanted tracking from advertising companies and keep your online activity safe. You can also <a href="https://www.eff.org/deeplinks/2012/06/how-turn-do-not-track-your-browser">enable the "Do Not Track" header</a> in your browser and <a href="http://www.cnet.com/how-to/disable-third-party-cookies-in-ie-firefox-and-google-chrome/">disable third party cookies.</a></p>
+          <p><a href="https://www.ghostery.com/">Ghostery</a>, uBlock Origin (for <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">Chrome</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">Firefox</a>), <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a>, and <a href="https://www.mozilla.org/en-US/lightbeam/">Lightbeam</a> are very useful tools that prevent unwanted tracking from advertising companies and keep your online activity safe. You can also <a href="https://www.eff.org/deeplinks/2012/06/how-turn-do-not-track-your-browser">enable the "Do Not Track" header</a> in your browser.</a></p>
         </div>
         <div class="col-md-4">
           <h2>Advertiser Opt-Outs</h2>
@@ -20,8 +49,29 @@
           <h2>Social Network Preferences</h2>
           <p><a href="https://www.facebook.com/settings?tab=ads">Facebook</a> and <a href="https://twitter.com/settings/security">Twitter</a> have internal opt-outs that keep those networks from tracking your data as well. </p>
         </div>
-    </div>
+    </div>-->
+
+
     <h2>Finally...</h2>
-    <p>Share this website with your other friends on Facebook! They should know exactly how Facebook is using their personal information and what they can do to protect themselves. Help make protected browsing the new normal!</p>
-    <a target="_blank" class="btn btn-primary" href="http://www.facebook.com/sharer.php?u=http://www.whatdoesfbknow.com&t=What Does Facebook Know?">Share</a>
+    <div class="row">
+        <div class="col-xs-6">
+          <h4>Spread the word</h4>
+          <p>Share this website with your other friends on Facebook! They should know exactly how Facebook is using their personal information and what they can do to protect themselves. Help make protected browsing the new normal!</p>
+          <a target="_blank" class="btn btn-primary" href="http://www.facebook.com/sharer.php?u=http://www.whatdoesfbknow.com&t=What Does Facebook Know?"><i class="fa fa-facebook-square"></i> Share</a>
+        </div>
+        <div class="col-xs-6">
+          <h4>Follow-Up Survey</h4>
+          <div class="question">
+              <p>Did you take advantage of any of the tools above to match your browser configuration to your beliefs?</p>
+              <form>
+                <input type="radio" name="answer" ng-change="selectAnswer()" value="yes" ng-model="responses2.answer"> Yes!
+                <br>
+                <input type="radio" name="answer" ng-change="selectAnswer()" value="no" ng-model="responses2.answer"> No.
+                <br>
+                <input type="radio" name="answer" ng-change="selectAnswer()" value="na" ng-model="responses2.answer"> My browser configuration already matches my beliefs.
+              </form> 
+          </div>
+          <button class="btn btn-primary" ng-click="submit2()" ng-disabled="!enableSubmit2()">Submit</button>
+        </div>
+    </div>
 </div>

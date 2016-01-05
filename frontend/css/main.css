@@ -122,6 +122,17 @@ body {
 
 #wrapper .ui-accordion-content {
   font-family: "Open Sans";
-  height: 15em;
+}
+
+#wrapper #info .ui-accordion-content {
+  max-height: 20em;
   overflow-y: scroll;
+}
+
+.accordion {
+  visibility: hidden;
+}
+
+.question {
+    margin-bottom: 1em;
 }

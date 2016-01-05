@@ -126,6 +126,13 @@ var statSchema = mongoose.Schema({
 
 var Stat = mongoose.model('Statistic', statSchema);
 
+
+var survey2Schema = mongoose.Schema({
+	answer: [Number]
+});
+
+var Survey2 = mongoose.model('Survey2', survey2Schema);
+
 app.post('/submitsurvey', function (req, res) {
 	console.log('POST request to /submitsurvey');
 	var data = req.body;
@@ -376,6 +383,68 @@ app.post('/submitsurvey', function (req, res) {
 	res.end();
 });
 
+
+app.post('/submitsurvey2', function (req, res) {
+	console.log('POST request to /submitsurvey2');
+	var data = req.body;
+
+	Survey2.findOne({}, function(err, survey) {
+		if (err) {
+	      console.log('Database error.');
+	      res.status(500).send({msg: 'Database error.'});
+	    }
+		if (survey == null) {
+			var newSurvey = {
+				answer: [0,0,0]
+			};
+
+			if (data.answer == 'yes') {
+				newSurvey.answer[0] = 1;
+			}
+			else if (data.answer == 'no') {
+				newSurvey.answer[1] = 1;
+			}
+			else if (data.answer == 'na') {
+				newSurvey.answer[2] = 1;
+			}
+			else {
+
+			}
+
+			var object = new Survey2(newSurvey);
+			object.save(function (err) {
+				if (err) return console.error(err);
+			});
+
+		}
+
+		else {
+			var update = {$inc: {}};
+			if (data.answer == 'yes') {
+				update.$inc['answer.0'] = 1;
+			}
+			else if (data.answer == 'no') {
+
+				update.$inc['answer.1'] = 1;
+			}
+			else if (data.answer == 'na') {
+				update.$inc['answer.2'] = 1;
+			}
+			else {
+
+			}
+
+			Survey2.findOneAndUpdate({}, update, function (err, survey) {
+				if (err) {
+					console.error(err);
+				}
+			});
+		}
+
+	});
+
+	res.end();
+});
 
 app.get('/statistics', function (req, res) {
 	console.log('GET request to /statistics');

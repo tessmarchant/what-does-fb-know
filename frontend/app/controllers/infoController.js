@@ -80,8 +80,10 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
 
           $('.accordion').accordion({
             collapsible: true,
-            active: false,
-            heightStyle: 'content'
+            active: false
+          });
+          $('.accordion').css({
+            visibility: 'visible'
           });
         }, 100);
 
