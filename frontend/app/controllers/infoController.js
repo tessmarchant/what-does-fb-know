@@ -77,6 +77,12 @@ cont.controller('infoController', function ($scope, $filter, $http, $location) {
           }, 500, function() {
             $('.bargraph').css('padding-bottom', '5em');
           });
+
+          $('.accordion').accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: 'content'
+          });
         }, 100);
 
     }, function errorCallback(response) {

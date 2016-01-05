@@ -1,71 +1,1058 @@
 <div class="jumbotron">
 	<div class="container">
 		<h2>Here's how everyone feels about that...</h2>
-		<p>On this page, you can see how your opinions compare to everyone else's. The graphs below are labeled with your answer and show the percentage of votes per ranking for each type of information. Hover over the graphs to see which ranking each section corresponds to!</p>
+		<p>On this page, you can see the actual data points that Facebook collects about you and how your opinions compare to everyone else's. Your opinions are shown in the graph labels and the breakdown of public opinion is shown in the bar graphs below. Hover over each graph section to see which ranking it corresponds to, then click the graph label drop-down to see the list of collected data points.</p>
 		<p>Here's the catch: no matter how personal you think this information is, Facebook is collecting it about <em>you</em>. </p>
 		<p><a class="btn btn-primary btn-lg" href="#/tools" role="button">Learn how to protect your information &raquo;</a></p>
 	</div>
 </div>
 <div class="container container-fluid">
-	
 
-	<h3>{{empInfoLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{empInfoLabel()}}</h3>
+		<div>
+			<ul>
+				<li>B2B</li>
+					<ul>
+						<li>Company size</li>
+							<ul>
+								<li>1,000-4,999 employees</li>
+								<li>10-49 employees</li>
+								<li>100-499 employees</li>
+								<li>5,000+ employees</li>
+								<li>50-99 employees</li>
+								<li>500-999 employees</li>
+								<li>Less than 10 employees</li>
+							</ul>
+						<li>Industry</li>
+							<ul>
+								<li>Agriculture</li>
+								<li>Business services</li>
+								<li>Construction</li>
+								<li>Consumer Services</li>
+								<li>Cultural and Recreation</li>
+								<li>Education</li>
+								<li>Finance</li>
+								<li>Government</li>
+								<li>Healthcare</li>
+								<li>Hospitality and Travel</li>
+								<li>Insurance</li>
+								<li>Legal</li>
+								<li>Logistics and Transportation</li>
+								<li>Manufacturing</li>
+								<li>Media and Internet</li>
+								<li>Real estate</li>
+								<li>Restaurant</li>
+								<li>Retail</li>
+								<li>Telecommunications</li>
+								<li>Wholesale trade</li>
+							</ul>
+						<li>Seniority</li>
+							<ul>
+								<li>Executive/C-suite</li>
+								<li>Mid-Management</li>
+							</ul>
+					</ul>
+				<li>Job Role</li>
+					<ul>
+						<li>Corporate executives</li>
+						<li>Farmers</li>
+						<li>Financial professionals</li>
+					</ul>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-empinfo">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-empinfo-{{$index}}" ng-repeat="level in stats.allStats.empinfo track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<h3>{{finBehLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{finBehLabel()}}</h3>
+		<div>
+			<ul>
+				<li>Banking</li>
+					<ul>
+						<li>Credit union member</li>
+						<li>National bank customers</li>
+						<li>Regional bank customers</li>
+					</ul>
+				<li>Investments</li>
+					<ul>
+						<li>Full-service investors</li>
+						<li>Highly likely investors</li>
+						<li>Independent investors</li>
+						<li>Likely investors</li>
+						<li>Personal investments</li>
+						<li>Real estate investments</li>
+						<li>Semi-independent investors</li>
+					</ul>
+				<li>Spending methods</li>
+					<ul>
+						<li>1 line of credit</li>
+						<li>2 lines of credit</li>
+						<li>3 lines of credit</li>
+						<li>4 lines of credit</li>
+						<li>5 lines of credit</li>
+						<li>6 lines of credit</li>
+						<li>7 lines of credit</li>
+						<li>8 lines of credit</li>
+						<li>9 lines of credit</li>
+						<li>Active credit card user</li>
+						<li>Any card type</li>
+						<li>Bank cards</li>
+						<li>Credit card high spenders</li>
+						<li>Debit card (Epsilon US)
+						<li>Gas, department, and retail store cards</li>
+						<li>High-end department store cards</li>
+						<li>Premium credit cards</li>
+						<li>Primarily cash</li>
+						<li>Primarily credit cards</li>
+						<li>Travel and entertainment cards</li>
+					</ul>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-finbeh">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-finbeh-{{$index}}" ng-repeat="level in stats.allStats.finbeh track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<h3>{{charDonLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{charDonLabel()}}</h3>
+		<div>
+			<ul>
+				<li>All charitable donations</li>
+				<li>Animal welfare</li>
+				<li>Arts and cultural</li>
+				<li>Cancer Causes</li>
+				<li>Children's causes</li>
+				<li>Environmental and wildlife</li>
+				<li>Health</li>
+				<li>Political</li>
+				<li>Religious</li>
+				<li>Veterans</li>
+				<li>World relief</li>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-chardon">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-chardon-{{$index}}" ng-repeat="level in stats.allStats.chardon track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<h3>{{expInfoLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{expInfoLabel()}}</h3>
+		<div>
+			<ul>
+				<li>All</li>
+				<li>Argentina</li>
+				<li>Australia</li>
+				<li>Austria</li>
+				<li>Bangladesh</li>
+				<li>Brazil</li>
+				<li>Cameroon</li>
+				<li>Canada</li>
+				<li>Chile</li>
+				<li>China</li>
+				<li>Colombia</li>
+				<li>Egypt</li>
+				<li>Ethiopia</li>
+				<li>France</li>
+				<li>Germany</li>
+				<li>Greece</li>
+				<li>Hong Kong</li>
+				<li>Hungary</li>
+				<li>India</li>
+				<li>Indonesia</li>
+				<li>Ireland</li>
+				<li>Israel</li>
+				<li>Italy</li>
+				<li>Japan</li>
+				<li>Kenya</li>
+				<li>Malaysia</li>
+				<li>Mexico</li>
+				<li>Morocco</li>
+				<li>Nepal</li>
+				<li>New Zealand</li>
+				<li>Nigeria</li>
+				<li>Pakistan</li>
+				<li>Peru</li>
+				<li>Philippines</li>
+				<li>Poland</li>
+				<li>Portugal</li>
+				<li>Puerto Rico</li>
+				<li>Romania</li>
+				<li>Russia</li>
+				<li>Saudi Arabia</li>
+				<li>Senegal</li>
+				<li>Serbia</li>
+				<li>Singapore</li>
+				<li>South Africa</li>
+				<li>South Korea</li>
+				<li>Spain</li>
+				<li>Switzerland</li>
+				<li>Turkey</li>
+				<li>UAE</li>
+				<li>UK</li>
+				<li>Venezuela</li>
+				<li>Vietnam</li>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-expinfo">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-expinfo-{{$index}}" ng-repeat="level in stats.allStats.expinfo track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
-
-	<h3>{{resProfLabel()}}</h3>
+	
+	<div class="accordion">
+		<h3>{{resProfLabel()}}</h3>
+		<div>
+			<ul>
+				<li>Length of residence:</li>
+				<ul>
+					<li>1 year</li>
+					<li>1-2 years</li>
+					<li>3-5 years</li>
+					<li>6+ years</li>
+				</ul>
+				<li>Likely to move</li>
+				<li>New mover</li>
+				<li>Recent homebuyer</li>
+				<li>Recent mortgage borrower</li>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-resprof">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-resprof-{{$index}}" ng-repeat="level in stats.allStats.resprof track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<h3>{{travBehLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{travBehLabel()}}</h3>
+		<div>
+			<ul>
+				<li>Business travelers</li>
+				<li>Business travelers international</li>
+				<li>Business travelers US</li>
+				<li>Casino vacations</li>
+				<li>Commuters</li>
+				<li>Cruises</li>
+				<li>Currently traveling</li>
+				<li>Family vacations</li>
+				<li>Frequent International Travelers</li>
+				<li>Frequent flyers</li>
+				<li>Leisure travelers</li>
+				<li>Personal travelers international</li>
+				<li>Personal travelers US</li>
+				<li>Returned from a trip 1 week ago</li>
+				<li>Returned from a trip 2 weeks ago</li>
+				<li>Timeshares</li>
+				<li>Used travel app 1 month</li>
+				<li>Used travel app 2 weeks</li>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-travbeh">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-travbeh-{{$index}}" ng-repeat="level in stats.allStats.travbeh track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<h3>{{purchBehLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{purchBehLabel()}}</h3>
+		<div>
+			<ul>
+				<li>Automotive</li>
+					<ul>
+						<li>Motorcycle</li>
+							<ul>
+								<li>Purchased New</li>
+								<li>Purchased Used</li>
+							</ul>
+						<li>New vehicle buyers (near market)</li>
+							<ul>
+								<li>Crossover</li>
+								<li>Economy/compact</li>
+								<li>Full-size SUV</li>
+								<li>Full-size sedan</li>
+								<li>Hybrid/alternative fuel</li>
+								<li>Luxury SUV</li>
+								<li>Midsize car</li>
+								<li>Minivan</li>
+								<li>Pickup truck</li>
+								<li>Small/midsize SUV</li>
+								<li>Sports car/convertible</li>
+							</ul>
+						<li>New vehicle shoppers (in market)</li>
+							<ul>
+								<li>Acura</li>
+								<li>Audi</li>
+								<li>BMW</li>
+								<li>Buick</li>
+								<li>Cadillac</li>
+								<li>Chevrolet car</li>
+								<li>Chevrolet truck</li>
+								<li>Chrysler</li>
+								<li>Dodge RAM</li>
+								<li>Dodge car</li>
+								<li>Fiat</li>
+								<li>Ford car</li>
+								<li>Ford truck</li>
+								<li>GMC</li>
+								<li>Honda</li>
+								<li>Hyundai</li>
+								<li>Infiniti</li>
+								<li>Jaguar</li>
+								<li>Jeep</li>
+								<li>Kia</li>
+								<li>Land Rover</li>
+								<li>Lexus</li>
+								<li>Lincoln</li>
+								<li>MINI</li>
+								<li>Mazda</li>
+								<li>Mercedes-Benz</li>
+								<li>Mitsubishi</li>
+								<li>Nissan</li>
+								<li>Porsche</li>
+								<li>Subaru</li>
+								<li>Toyota</li>
+								<li>Volkswagen</li>
+								<li>Volvo</li>
+							</ul>
+						<li>New vehicle shoppers (max in market)</li>
+							<ul>
+								<li>All</li>
+								<li>Crossover</li>
+								<li>Economy/compact</li>
+								<li>Full-size SUV</li>
+								<li>Full-size sedan</li>
+								<li>Hybrid/alternative fuel</li>
+								<li>Luxury SUV</li>
+								<li>Midsize car</li>
+								<li>Minivan</li>
+								<li>Pickup truck</li>
+								<li>Small/midsize SUV</li>
+								<li>Sports car/convertible</li>
+							</ul>
+						<li>Owners</li>
+							<ul>
+								<li>Aftermarket</li>
+									<ul>
+										<li>Auto parts</li>
+										<li>Auto parts and accessories</li>
+										<li>Auto service buyer</li>
+									</ul>
+								<li>Make</li>
+									<ul>
+										<li>Acura</li>
+										<li>Audi</li>
+										<li>BMW</li>
+										<li>Buick</li>
+										<li>Cadillac</li>
+										<li>Chevrolet car</li>
+										<li>Chevrolet truck</li>
+										<li>Chrysler</li>
+										<li>Dodge RAM</li>
+										<li>Dodge car</li>
+										<li>Fiat</li>
+										<li>Ford car</li>
+										<li>Ford truck</li>
+										<li>GMC</li>
+										<li>Honda</li>
+										<li>Hummer</li>
+										<li>Hyundai</li>
+										<li>Infiniti</li>
+										<li>Jaguar</li>
+										<li>Jeep</li>
+										<li>Kia</li>
+										<li>Land Rover</li>
+										<li>Lexus</li>
+										<li>Lincoln</li>
+										<li>MINI</li>
+										<li>Mazda</li>
+										<li>Mercedes-Benz</li>
+										<li>Mercury</li>
+										<li>Mitsubishi</li>
+										<li>Nissan</li>
+										<li>Porsche</li>
+										<li>Saab</li>
+										<li>Saturn</li>
+										<li>Subaru</li>
+										<li>Suzuki</li>
+										<li>Toyota</li>
+										<li>Volkswagen</li>
+										<li>Volvo</li>
+									</ul>
+								<li>Purchased</li>
+									<ul>
+										<li>0-6 months</li>
+										<li>13-24 months</li>
+										<li>25-36 months</li>
+										<li>37-48 months</li>
+										<li>7-12 months</li>
+										<li>Over 48 months</li>
+									</ul>
+								<li>Style</li>
+									<ul>
+										<li>Crossover</li>
+										<li>Economy/compact</li>
+										<li>Full-size SUV</li>
+										<li>Full-size sedan</li>
+										<li>Hybrid/alternative fuel</li>
+										<li>Luxury SUV</li>
+										<li>Luxury sedan</li>
+										<li>Midsize car</li>
+										<li>Minivan</li>
+										<li>Pickup truck</li>
+										<li>Small/midsize SUV</li>
+										<li>Sports car/convertible</li>
+									</ul>
+								<li>Vehicle age</li>
+									<ul>
+										<li>0-1 year old</li>
+										<li>11-15 years old</li>
+										<li>16-20 years old</li>
+										<li>2 years old</li>
+										<li>3 years old</li>
+										<li>4-5 years old</li>
+										<li>6-10 years old</li>
+										<li>Over 20 years old</li>
+									</ul>
+								<li>Vehicle price</li>
+									<ul>
+										<li>$20,000-$30,000</li>
+										<li>$30,000-$40,000</li>
+										<li>$40,000-$50,000</li>
+										<li>$50,000-$75,000</li>
+										<li>Less than $20,000</li>
+										<li>Over $75,000</li>
+									</ul>
+							</ul>
+						<li>Purchase type</li>
+							<ul>
+								<li>Buy new (in market)</li>
+								<li>Buy new (near market)</li>
+								<li>Buy new or used (in market)</li>
+								<li>Buy new or used (near market)</li>
+								<li>Buy used (in market)</li>
+								<li>Lease (in market)</li>
+							</ul>
+						<li>Used vehicle buyers (in market)</li>
+							<ul>
+								<li>Crossover</li>
+								<li>Economy/compact</li>
+								<li>Full-size SUV</li>
+								<li>Full-size sedan</li>
+								<li>Hybrid/alternative fuel</li>
+								<li>Luxury SUV</li>
+								<li>Luxury sedan</li>
+								<li>Midsize car</li>
+								<li>Minivan</li>
+								<li>Pickup truck</li>
+								<li>Small/midsize SUV</li>
+								<li>Sports car/convertible</li>
+							</ul>
+					</ul>
+				<li>Business purchases</li>
+					<ul>
+						<li>Business marketing</li>
+						<li>Maintenance, repair, and operations</li>
+					</ul>
+				<li>Buyer profiles</li>
+					<ul>
+						<li>Coupon users</li>
+						<li>DIYers</li>
+						<li>Fashionistas</li>
+						<li>Foodies</li>
+						<li>Gadget enthusiast</li>
+						<li>Gamers</li>
+						<li>Green living</li>
+						<li>Healthy and fit</li>
+						<li>Outdoor enthusiasts</li>
+						<li>Shoppers</li>
+						<li>Skiing, golfing, and boating</li>
+						<li>Spa enthusiasts</li>
+						<li>Sportsmen</li>
+						<li>Trendy homemakers</li>
+					</ul>
+				<li>Clothing</li>
+					<ul>
+						<li>Men's</li>
+							<ul>
+								<li>Accessories</li>
+								<li>Big and tall apparel</li>
+								<li>Business apparel</li>
+								<li>Jeans</li>
+								<li>Men's fashion and apparel buyers</li>
+							</ul>
+						<li>Seasonal</li>
+							<ul>
+								<li>Fall seasonal shoppers</li>
+								<li>Spring seasonal shoppers</li>
+								<li>Summer seasonal shoppers</li>
+								<li>Winter seasonal shoppers</li>
+							</ul>
+						<li>Women's</li>
+							<ul>
+								<li>Accessories</li>
+								<li>Business apparel</li>
+								<li>Fine jewelry</li>
+								<li>High ticket apparel and accessories</li>
+								<li>Jewelry</li>
+								<li>Low-ticket apparel and accessories</li>
+								<li>Luxury brand apparel</li>
+								<li>Luxury retailers</li>
+								<li>Mid-ticket apparel and accessories</li>
+								<li>Plus sizes</li>
+								<li>Women's shoes</li>
+								<li>Womens fashion and apparel buyers</li>
+								<li>Young womens apparel</li>
+							</ul>
+					</ul>
+				<li>Food and Drink</li>
+					<ul>
+						<li>Alcoholic Beverages</li>
+							<ul>
+								<li>Beer</li>
+								<li>Craft beer</li>
+								<li>Domestic beer</li>
+								<li>Import beer</li>
+								<li>Light beer</li>
+								<li>Premium beer</li>
+								<li>Spirits</li>
+								<li>Wine</li>
+							</ul>
+						<li>Bakery products</li>
+						<li>Beverages</li>
+							<ul>
+								<li>Bottled water</li>
+								<li>Carbonated drinks</li>
+								<li>Coffee</li>
+								<li>Coffee K-Cup</li>
+								<li>Diet drinks</li>
+								<li>Energy drinks</li>
+								<li>Hot tea</li>
+								<li>Iced tea and lemonade</li>
+								<li>Juice</li>
+								<li>Non-dairy milk</li>
+								<li>Sports drinks</li>
+							</ul>
+						<li>Cereal</li>
+							<ul>
+								<li>All cereal</li>
+								<li>Children's cereals</li>
+								<li>Fiber cereals</li>
+								<li>Hot cereals</li>
+							</ul>
+						<li>Children's food</li>
+							<ul>
+								<li>Baby food and products</li>
+								<li>Children's food</li>
+								<li>Children's food and products</li>
+							</ul>
+						<li>Condiments and dressings</li>
+							<ul>
+								<li>Condiments</li>
+								<li>Salad dressings</li>
+							</ul>
+						<li>Cooking supplies</li>
+							<ul>
+								<li>Baking</li>
+								<li>Spices</li>
+							</ul>
+						<li>Dairy and eggs</li>
+							<ul>
+								<li>Cheese</li>
+								<li>Dairy free</li>
+								<li>Eggs</li>
+								<li>Milk</li>
+								<li>Yogurt</li>
+							</ul>
+						<li>Fresh and Healthy</li>
+						<li>Frozen food</li>
+							<ul>
+								<li>Frozen appetizers and snacks</li>
+								<li>Frozen bread and dough</li>
+								<li>Frozen breakfast</li>
+								<li>Frozen desserts</li>
+								<li>Frozen entrees</li>
+								<li>Frozen ethnic foods</li>
+								<li>Frozen fruit</li>
+								<li>Frozen meats and seafood</li>
+								<li>Frozen pasta</li>
+								<li>Frozen pizza</li>
+								<li>Frozen vegetables</li>
+								<li>Ice cream and novelties</li>
+							</ul>
+						<li>Grocery shopper type</li>
+							<ul>
+								<li>Premium brand groceries</li>
+								<li>Top spenders</li>
+							</ul>
+						<li>Health food</li>
+							<ul>
+								<li>Diet foods</li>
+								<li>Fresh produce</li>
+								<li>Low-fat foods</li>
+								<li>Natural and organics</li>
+							</ul>
+						<li>Home Cooking and Grilling</li>
+						<li>Meat and Seafood</li>
+							<ul>
+								<li>Meat</li>
+								<li>Seafood</li>
+							</ul>
+						<li>Soup</li>
+						<li>Sweets and snacks</li>
+							<ul>
+								<li>Breakfast bars</li>
+								<li>Chocolate candy</li>
+								<li>Cookies</li>
+								<li>Crackers</li>
+								<li>Granola bars</li>
+								<li>Non-chocolate candy</li>
+								<li>Peanut butter and jelly</li>
+								<li>Salty snacks</li>
+							</ul>
+						<li>Vegetarian</li>
+					</ul>
+				<li>Health and Beauty</li>
+					<ul>
+						<li>Allergy Relief</li>
+						<li>Antiperspirants & deodorants</li>
+						<li>Beauty products and accessories</li>
+						<li>Cosmetics</li>
+						<li>Cough and cold relief</li>
+						<li>Fragrance</li>
+						<li>Hair care</li>
+						<li>Health and wellness buyers</li>
+						<li>Men's grooming</li>
+						<li>Oral care</li>
+						<li>Over-the-counter medication</li>
+						<li>Pain relief</li>
+						<li>Skin care</li>
+						<li>Sun care</li>
+						<li>Vitamins</li>
+						<li>Vitamins and supplements</li>
+					</ul>
+				<li>Home and Garden</li>
+					<ul>
+						<li>Entertaining</li>
+						<li>Home improvement</li>
+						<li>Home renovation</li>
+						<li>Organization</li>
+						<li>Tools</li>
+					</ul>
+				<li>Household products</li>
+					<ul>
+						<li>Cleaning supplies</li>
+						<li>Food storage</li>
+						<li>Green cleaners and supplies</li>
+						<li>Laundry supplies</li>
+					</ul>
+				<li>Kids products</li>
+					<ul>
+						<li>Baby care</li>
+						<li>Baby toys</li>
+						<li>Children's products</li>
+					</ul>
+				<li>Pet products</li>
+					<ul>
+						<li>Cat food and products</li>
+						<li>Cat owners</li>
+						<li>Cat products</li>
+						<li>Dog food and products</li>
+						<li>Dog owners</li>
+						<li>Dog products</li>
+						<li>Other pet products</li>
+						<li>Pet care products</li>
+						<li>Pet products</li>
+					</ul>
+				<li>Purchase habits</li>
+					<ul>
+						<li>Above average spending</li>
+						<li>Offline buyers</li>
+						<li>Online buyers</li>
+					</ul>
+				<li>Purchase types</li>
+					<ul>
+						<li>Appliances and accessories</li>
+						<li>Arts and crafts</li>
+						<li>Baby products</li>
+						<li>Beauty accessories</li>
+						<li>Books</li>
+						<li>Childrens apparel</li>
+						<li>Collectibles</li>
+						<li>Consumer Electronics buyers</li>
+						<li>Cosmetics</li>
+						<li>Electronics</li>
+						<li>Gift products</li>
+						<li>Gifts and flowers</li>
+						<li>Gifts and party supplies</li>
+						<li>High-end home décor</li>
+						<li>Home furnishings and accessories</li>
+						<li>Home office</li>
+						<li>Low-end home décor</li>
+						<li>Men's apparel</li>
+						<li>Music and Videos</li>
+						<li>Restaurant</li>
+							<ul>
+								<li>Fine dining</li>
+								<li>Mid-range restaurants/non quick serve</li>
+								<li>Quick serve restaurants</li>
+							</ul>
+						<li>Senior products</li>
+						<li>Shoes</li>
+						<li>Small and home office products</li>
+						<li>Software</li>
+						<li>Specialty foods and gifts</li>
+						<li>Sports and outdoors</li>
+						<li>Tools and electronics</li>
+						<li>Toys</li>
+						<li>Travel supplies</li>
+						<li>Upscale travel and services</li>
+						<li>Women's apparel</li>
+					</ul>
+				<li>Sports and outdoors</li>
+					<ul>
+						<li>Cycling</li>
+						<li>Fishing</li>
+						<li>Fitness</li>
+						<li>Golf and tennis</li>
+						<li>Hiking and camping</li>
+						<li>Hunting</li>
+						<li>Running</li>
+						<li>Winter sports</li>
+					</ul>
+				<li>Store Types</li>
+					<ul>
+						<li>Department stores</li>
+						<li>Discount department store</li>
+						<li>High-end retail</li>
+						<li>Low-end department store</li>
+						<li>Luxury store</li>
+					</ul>
+				<li>Subscription services</li>
+					<ul>
+						<li>Auto insurance online</li>
+						<li>Higher education</li>
+						<li>Mortgage online</li>
+						<li>Prepaid debit cards</li>
+						<li>Satellite TV</li>
+					</ul>
+				<li>Technology</li>
+					<ul>
+						<li>Kindle eReader</li>
+						<li>Use an eReader</li>
+					</ul>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-purchbeh">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-purchbeh-{{$index}}" ng-repeat="level in stats.allStats.purchbeh track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<h3>{{medConLabel()}}</h3>
+	<div class="accordion">
+		<h3>{{medConLabel()}}</h3>
+		<div>
+			<ul>
+				<li>Digital Activities</li>
+					<ul>
+						<li>Canvas Gaming</li>
+							<ul>
+								<li>Average Engagement
+									<ul>
+										<li>Plays 0 out of 7 days</li>
+										<li>Plays 1 out of 7 days</li>
+										<li>Plays 2 out of 7 days</li>
+										<li>Plays 3 out of 7 days</li>
+										<li>Plays 4 out of 7 days</li>
+										<li>Plays 5 out of 7 days</li>
+										<li>Plays 6 out of 7 days</li>
+										<li>Plays 7 out of 7 days</li>
+									</ul>
+								<li>Played game in last 14 days</li>
+								<li>Played game in last 3 days</li>
+								<li>Played game in last 7 days</li>
+								<li>Played game yesterday</li>
+							</ul>
+						<li>Console gamers</li>
+						<li>Event creators</li>
+						<li>FB Payments (All)</li>
+						<li>FB Payments (Higher than average spend)</li>
+						<li>FB Payments (Recent)</li>
+						<li>Facebook Page Admins</li>
+						<li>Internet Browser Used</li>
+							<ul>
+								<li>Chrome</li>
+								<li>Firefox</li>
+								<li>Internet Explorer</li>
+								<li>Opera</li>
+								<li>Safari</li>
+							</ul>
+						<li>Operating System Used</li>
+							<ul>
+								<li>Primary OS Windows 10</li>
+								<li>Primary OS Mac OS X</li>
+								<li>Primary OS Windows 7</li>
+								<li>Primary OS Windows 8</li>
+								<li>Primary OS Windows Vista</li>
+								<li>Primary OS Windows XP</li>
+							</ul>
+						<li>Photo Uploaders</li>
+						<li>Primary email domain</li>
+							<ul>
+								<li>AOL Email Addresses</li>
+								<li>Apple Email Addresses</li>
+								<li>Gmail Users</li>
+								<li>Hotmail Email Addresses</li>
+								<li>MSN.com Email Addresses</li>
+								<li>Yahoo Email Addresses</li>
+							</ul>
+						<li>Small business owners</li>
+						<li>Technology early adopters</li>
+						<li>Technology late adopters</li>
+						<li>Unity Plugin</li>
+					</ul>
+				<li>Media</li>
+					<ul>
+						<li>Radio</li>
+							<ul>
+								<li>Internet</li>
+								<li>Internet/Satellite</li>
+							</ul>
+						<li>Television</li>
+							<ul>
+								<li>Action shows</li>
+								<li>Adventure shows</li>
+								<li>Animals shows</li>
+								<li>Auto Racing shows</li>
+								<li>Auto shows</li>
+								<li>Baseball shows</li>
+								<li>Biography shows</li>
+								<li>Childrens shows</li>
+								<li>Comedy shows</li>
+								<li>Cooking shows</li>
+								<li>Docudrama shows</li>
+								<li>Drama shows</li>
+								<li>Educational shows</li>
+								<li>Entertainment shows</li>
+								<li>Health shows</li>
+								<li>Historical drama shows</li>
+								<li>History shows</li>
+								<li>Home improvement shows</li>
+								<li>Horror shows</li>
+								<li>Law shows</li>
+								<li>Motorsports shows</li>
+								<li>News shows</li>
+								<li>Outdoors shows</li>
+								<li>Public affairs shows</li>
+								<li>Reality shows</li>
+								<li>Religious shows</li>
+								<li>Romance shows</li>
+								<li>Science fiction shows</li>
+								<li>Sitcom shows</li>
+								<li>Sports events shows</li>
+								<li>Sports talk shows</li>
+								<li>Travel shows</li>
+								<li>Western shows</li>
+							</ul>
+					</ul>
+				<li>Mobile Device User</li>
+					<ul>
+						<li>All mobile devices by brand</li>
+							<ul>
+								<li>Alcatel</li>
+								<li>Amazon Kindle Fire</li>
+								<li>Apple</li>
+									<ul>
+										<li>iPad 1</li>
+										<li>iPad 2</li>
+										<li>iPad 3</li>
+										<li>iPad 4</li>
+										<li>iPad Air</li>
+										<li>iPad Air 2</li>
+										<li>iPad Mini 1</li>
+										<li>iPad Mini 2</li>
+										<li>iPad Mini 3</li>
+										<li>iPhone 4</li>
+										<li>iPhone 4S</li>
+										<li>iPhone 5</li>
+										<li>iPhone 5S</li>
+										<li>iPhone 6</li>
+										<li>iPhone 6 Plus</li>
+										<li>iPhone 6S</li>
+										<li>iPhone 6S Plus</li>
+										<li>iPod Touch</li>
+									</ul>
+								<li>Asus</li>
+									<ul>
+										<li>Fonepad</li>
+										<li>MeMO Pad</li>
+										<li>Transformer Pad</li>
+									</ul>
+								<li>BlackBerry</li>
+									<ul>
+										<li>Bold 9700</li>
+										<li>Curve 8520</li>
+										<li>Curve 9220</li>
+										<li>Curve 9320</li>
+									</ul>
+								<li>Cherry Mobile</li>
+								<li>Google</li>
+									<ul>
+										<li>Nexus 10</li>
+										<li>Nexus 5</li>
+										<li>Nexus 7</li>
+									</ul>
+								<li>HTC One</li>
+								<li>Huawei</li>
+								<li>Karbonn</li>
+								<li>LG</li>
+									<ul>
+										<li>G3</li>
+										<li>LG G2</li>
+										<li>Optimus L3</li>
+										<li>Optimus L5</li>
+										<li>Optimus L7</li>
+									</ul>
+								<li>Lava</li>
+								<li>Micromax</li>
+								<li>Motorola</li>
+								<li>Nokia</li>
+									<ul>
+										<li>2700 Classic</li>
+										<li>5130 XpressMusic</li>
+										<li>Asha</li>
+										<li>Asha 200</li>
+										<li>Asha 302</li>
+										<li>Asha 305</li>
+										<li>Asha 311</li>
+										<li>C1-01</li>
+										<li>C3</li>
+										<li>Lumia 1020</li>
+										<li>Lumia 1320</li>
+										<li>Lumia 1520</li>
+										<li>Lumia 520</li>
+										<li>Lumia 625</li>
+										<li>Lumia 630</li>
+										<li>Lumia 720</li>
+										<li>Lumia 900</li>
+										<li>Lumia 920</li>
+										<li>X2-01</li>
+									</ul>
+								<li>Samsung</li>
+									<ul>
+										<li>Alpha</li>
+										<li>Champ</li>
+										<li>Galaxy Ace</li>
+										<li>Galaxy Ace 2</li>
+										<li>Galaxy Grand</li>
+										<li>Galaxy Grand 2</li>
+										<li>Galaxy Mini</li>
+										<li>Galaxy Note 3</li>
+										<li>Galaxy Note 4</li>
+										<li>Galaxy Note II</li>
+										<li>Galaxy Pocket Duos</li>
+										<li>Galaxy Pocket Plus</li>
+										<li>Galaxy S 4 Mini</li>
+										<li>Galaxy S Advance</li>
+										<li>Galaxy S Duos</li>
+										<li>Galaxy S II</li>
+										<li>Galaxy S III</li>
+										<li>Galaxy S III Mini</li>
+										<li>Galaxy S4</li>
+										<li>Galaxy S5</li>
+										<li>Galaxy S6</li>
+										<li>Galaxy Tab</li>
+										<li>Galaxy Tab 2</li>
+										<li>Galaxy Tab 3</li>
+										<li>Galaxy Tab 4</li>
+										<li>Galaxy Tab Pro</li>
+										<li>Galaxy Tab S</li>
+										<li>Galaxy Y</li>
+										<li>Galaxy Y Duos</li>
+									</ul>
+								<li>Sony</li>
+									<ul>
+										<li>Xperia E</li>
+										<li>Xperia M</li>
+										<li>Xperia P</li>
+										<li>Xperia S</li>
+										<li>Xperia SL</li>
+										<li>Xperia SP</li>
+										<li>Xperia T</li>
+										<li>Xperia U</li>
+										<li>Xperia Z</li>
+										<li>Xperia Z Ultra</li>
+										<li>Xperia Z1</li>
+										<li>Xperia Z2</li>
+										<li>Xperia Z3</li>
+										<li>Xperia ZL</li>
+										<li>Xperia ZR</li>
+									</ul>
+								<li>Tecno</li>
+								<li>XOLO</li>
+								<li>Xiaomi</li>
+								<li>ZTE</li>
+							</ul>
+						<li>All mobile devices by OS</li>
+							<ul>
+								<li>All Android Devices</li>
+								<li>All iOS Devices</li>
+								<li>Windows Phones</li>
+							</ul>
+						<li>All mobile devices</li>
+						<li>Feature phones</li>
+						<li>Network Connection</li>
+							<ul>
+								<li>2G (US)</li>
+								<li>3G (US)</li>
+								<li>4G (US)</li>
+								<li>WiFi Connection</li>
+							</ul>
+						<li>New smartphones and tablet owners</li>
+						<li>Smartphone Owners</li>
+						<li>Smartphones and tablets</li>
+						<li>Tablet Owners</li>
+					</ul>
+				<li>Seasonal and Events</li>
+					<ul>
+						<li>Baseball 2015</li>
+						<li>College Football US</li>
+						<li>Cricket 2015</li>
+						<li>Fall Football US</li>
+							<ul>
+								<li>Fans of 1 or more Teams</li>
+								<li>Fans of 3 or more Teams</li>
+							</ul>
+						<li>Holiday 2015</li>
+						<li>Professional Football US</li>
+						<li>Rugby 2015</li>
+					</ul>
+			</ul>
+		</div>
+	</div>
+	<p style="margin-top: 1em">How the public rated this category:</p>
 	<div class="bargraph allstats" id="allstats-medcon">
 		<div class="bargraph-layer layer-{{$index}}" id="layer-allstats-medcon-{{$index}}" ng-repeat="level in stats.allStats.medcon track by $index" ng-hide="$index == 0">
 			<p class="bargraph-label">{{privacyMeterLabel($index)}}</p>
 		</div>
 	</div>
 
-	<!--<p style="text-align: center">
-        <button id="retake-button" class="btn btn-lg btn-primary" ng-click="clearHistory()">Retake the survey</button>
-    </p>-->
 </div>
