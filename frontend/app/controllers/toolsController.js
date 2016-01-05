@@ -16,6 +16,7 @@ cont.controller('toolsController', function ($scope, $filter, $http, $location) 
 
   $(document).ready(function (){
     $('.navbar-nav').show();
+    $('button.navbar-toggle').show();
     $('#page-link-tools').addClass('page-selected active');
     $('#page-link-info').removeClass('page-selected active');
     window.scrollTo(0,0);

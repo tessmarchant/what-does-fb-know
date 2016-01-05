@@ -136,3 +136,7 @@ body {
 .question {
     margin-bottom: 1em;
 }
+
+.navbar-toggle {
+  display: none;
+}

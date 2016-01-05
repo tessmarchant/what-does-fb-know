@@ -37,6 +37,7 @@ cont.controller('surveyController', function ($scope, $filter, $http, $location)
     }
     else {
       $('.navbar-nav').hide();
+      $('button.navbar-toggle').hide();
       $('#survey-page').css("visibility", "visible");
     }
 
